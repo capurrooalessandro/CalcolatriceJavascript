@@ -1,0 +1,99 @@
+<html>
+<head>
+	<title>Calcolatrice "Modificata"</title>
+	<script>
+		function aggiungi(n){
+			document.getElementById("display").value += n;
+		}
+
+		function calcola(){
+			document.getElementById("display").value=eval(document.getElementById("display").value); 
+		}
+		
+		function cancella(){
+			var str = document.getElementById("display").value;
+			document.getElementById("display").value = str.substring(0, str.length -1);
+		}
+		
+		function cancellaTutto(){
+			document.getElementById("display").value = "";
+		}
+	</script>
+	<style>
+		div{
+			text-align: center;
+		}
+		input[type = "button"]{
+			width: 40;
+			height: 40;
+			margin-bottom: 5;
+			font-size: 25;
+		}
+		
+		input[type = "text"]{
+			width: 220;
+			height: 35;
+			font-size: 25;
+			padding: 5;
+			margin: 5;
+		}
+		
+		body{
+			background: #f2f2f2;
+		}
+		
+		h2.arial{
+			font-family: arial;
+			font-size: 200%; 
+			text-align: center;
+			margin-bottom: 2%;
+		}
+		
+		h2{
+			font-family: arial;
+			font-size: 200%; 
+			text-align: center;
+			margin-bottom: -1%;
+		}
+		
+		h2.timesnewroman{
+			font-family: TimesNewRoman;
+			font-size: 200%; 
+			text-align: center;
+			margin-top: 1.5%;
+			margin-bottom: 3%;
+		}
+	</style>
+</head>
+<body>
+	<h2 class="arial">"CALCOLATRICE"</h2>
+	<div>
+	<form name = "form">
+		<input type = "text" id="display" readonly>
+	</form>
+	<br>
+	<input type="button" value="1" onclick="aggiungi(1)">
+	<input type="button" value="2" onclick="aggiungi(2)">
+	<input type="button" value="3" onclick="aggiungi(3)">
+	<input type="button" value="<-" onclick="cancella()">
+	<input type="button" value="+" onclick="aggiungi('+')">
+	<br>
+	<input type="button" value="4" onclick="aggiungi(4)">
+	<input type="button" value="5" onclick="aggiungi(5)">
+	<input type="button" value="6" onclick="aggiungi(6)">
+	<input type="button" value="/" onclick="aggiungi('/')">
+	<input type="button" value="-" onclick="aggiungi('-')">
+	<br>
+	<input type="button" value="7" onclick="aggiungi(7)">
+	<input type="button" value="8" onclick="aggiungi(8)">
+	<input type="button" value="9" onclick="aggiungi(9)">
+	<input type="button" value="C" style="width: 85;" onclick="cancellaTutto()">
+	<br>
+	<input type="button" value="." onclick="aggiungi('.')">
+	<input type="button" value="0" onclick="aggiungi(0)">
+	<input type="button" value="*" onclick="aggiungi('*')">
+	<input type="button" value="=" style="width: 85;" onclick="calcola()">
+	
+	</div>
+</body>
+</html>
